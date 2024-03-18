@@ -3,7 +3,8 @@ import {
   LoaderFunction,
   useLoaderData,
   redirect,
-  ActionFunction,
+  ActionFunctionArgs,
+  useNavigate,
 } from 'react-router-dom';
 
 import { LoaderData } from '../types/LoaderData';
@@ -14,7 +15,7 @@ export const loader = (async ({ params }) => {
   return { contact };
 }) satisfies LoaderFunction;
 
-export const action: ActionFunction = async ({ request, params }) => {
+export const action = async ({ request, params }: ActionFunctionArgs) => {
   const formData = await request.formData();
   const updates = Object.fromEntries(formData);
   await updateContact(params?.contactId ?? '', updates);
@@ -23,6 +24,7 @@ export const action: ActionFunction = async ({ request, params }) => {
 
 const Edit = () => {
   const { contact } = useLoaderData() as LoaderData<typeof loader>;
+  const navigate = useNavigate();
   return (
     <Form method="post" id="contact-form">
       <p>
@@ -67,7 +69,9 @@ const Edit = () => {
       </label>
       <p>
         <button type="submit">Save</button>
-        <button type="button">Cancel</button>
+        <button type="button" onClick={() => navigate(-1)}>
+          Cancel
+        </button>
       </p>
     </Form>
   );

@@ -14,5 +14,9 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowExportNames: ['loader', 'action'] },
+    ],
   },
-}
+};

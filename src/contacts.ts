@@ -9,7 +9,7 @@ const queryContacts = async () => {
   return retVal ?? [];
 };
 
-export async function getContacts(query?: string) {
+export async function getContacts(query?: string | null) {
   await fakeNetwork(`getContacts:${query}`);
   const contacts = await (async () => {
     const result = await queryContacts();
