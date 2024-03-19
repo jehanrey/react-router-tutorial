@@ -1,22 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import Root, {
-  loader as rootLoader,
-  action as rootAction,
-} from './routes/root';
-import Home from './routes/home';
-import Contact, {
-  loader as contactLoader,
-  action as contactAction,
-} from './routes/contact';
-import Edit, {
-  loader as editLoader,
-  action as editAction,
-} from './routes/edit';
-import { action as destroyAction } from './routes/destroy';
 import Error from './error';
+import Contact, {
+  action as contactAction,
+  loader as contactLoader,
+} from './routes/contact';
+import { action as destroyAction } from './routes/destroy';
+import Edit, {
+  action as editAction,
+  loader as editLoader,
+} from './routes/edit';
+import Home from './routes/home';
+import Root, {
+  action as rootAction,
+  loader as rootLoader,
+} from './routes/root';
 import './index.css';
 
 const router = createBrowserRouter([

@@ -1,16 +1,16 @@
+import { useEffect, useRef } from 'react';
 import {
-  Outlet,
-  useLoaderData,
-  LoaderFunction,
   Form,
-  redirect,
+  LoaderFunction,
   NavLink,
+  Outlet,
+  redirect,
+  useLoaderData,
   useNavigation,
   useSubmit,
 } from 'react-router-dom';
-import { useEffect, useRef } from 'react';
 
-import { getContacts, createContact } from '../contacts';
+import { createContact, getContacts } from '../contacts';
 import { LoaderData } from '../types/LoaderData';
 
 export const action = async () => {

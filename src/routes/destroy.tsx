@@ -1,4 +1,4 @@
-import { redirect, type ActionFunctionArgs } from 'react-router-dom';
+import { type ActionFunctionArgs, redirect } from 'react-router-dom';
 
 import { deleteContact } from '../contacts';
 

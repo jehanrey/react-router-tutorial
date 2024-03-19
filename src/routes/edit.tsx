@@ -1,14 +1,14 @@
 import {
+  ActionFunctionArgs,
   Form,
   LoaderFunction,
-  useLoaderData,
   redirect,
-  ActionFunctionArgs,
+  useLoaderData,
   useNavigate,
 } from 'react-router-dom';
 
-import { LoaderData } from '../types/LoaderData';
 import { getContact, updateContact } from '../contacts';
+import { LoaderData } from '../types/LoaderData';
 
 export const loader = (async ({ params }) => {
   const contact = await getContact(params.contactId ?? '');

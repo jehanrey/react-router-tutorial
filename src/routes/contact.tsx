@@ -1,9 +1,9 @@
 import {
-  Form,
-  useLoaderData,
-  LoaderFunction,
   ActionFunctionArgs,
+  Form,
+  LoaderFunction,
   useFetcher,
+  useLoaderData,
 } from 'react-router-dom';
 
 import { getContact, updateContact } from '../contacts';
